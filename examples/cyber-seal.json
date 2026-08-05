@@ -1,0 +1,25 @@
+{
+  "@context": "https://cyberprotocol.io/ns/v1",
+  "type": "CyberSeal",
+  "issuer": "did:cyber:agent:z6Mkf5rGMoatrSj1f4CyvuHBeXJELe9RPdzo2PKGNCKVtZxP",
+  "created": "2026-08-05T09:30:00Z",
+  "subject": {
+    "digest": "sha-256:8f434346648f6b96df89dda901c5176b10a6d83961dd3c1ac88b59b2dc327aa4"
+  },
+  "config": {
+    "hash": "sha-256:2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae"
+  },
+  "compliance": {
+    "euAiAct": "limited-risk",
+    "nistRmf": "measured",
+    "iso42001": "attested"
+  },
+  "proof": {
+    "type": "DataIntegrityProof",
+    "cryptosuite": "ecdsa-jcs-2019",
+    "created": "2026-08-05T09:30:00Z",
+    "verificationMethod": "did:cyber:agent:z6Mkf5rGMoatrSj1f4CyvuHBeXJELe9RPdzo2PKGNCKVtZxP#sign-key-1",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "z58DAdFfa9SkqZMVvxWTb9njsIThisIsAnIllustrativePlaceholderValue"
+  }
+}

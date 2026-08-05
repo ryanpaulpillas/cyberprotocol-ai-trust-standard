@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+
+    "cyber": "https://cyberprotocol.io/ns/v1#",
+    "sec": "https://w3id.org/security#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "CyberSeal": "cyber:CyberSeal",
+
+    "issuer":  { "@id": "cyber:issuer", "@type": "@id" },
+    "created": { "@id": "cyber:created", "@type": "xsd:dateTime" },
+
+    "subject": { "@id": "cyber:subject", "@container": "@set" },
+    "digest":  "cyber:digest",
+
+    "config":  "cyber:config",
+    "hash":    "cyber:hash",
+
+    "model":   "cyber:model",
+    "name":    "cyber:name",
+    "version": "cyber:version",
+    "release": "cyber:release",
+
+    "compliance": "cyber:compliance",
+    "euAiAct":    "cyber:euAiAct",
+    "nistRmf":    "cyber:nistRmf",
+    "iso42001":   "cyber:iso42001",
+
+    "proof": { "@id": "sec:proof", "@type": "@id", "@container": "@graph" }
+  }
+}

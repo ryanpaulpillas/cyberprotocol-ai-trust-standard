@@ -1,0 +1,17 @@
+{
+  "$comment": "Illustrative compliance object. A single attestation maps one output to multiple frameworks simultaneously.",
+  "euAiAct": {
+    "riskCategory": "limited-risk",
+    "reference": "Regulation (EU) 2024/1689",
+    "transparencyObligations": true
+  },
+  "nistRmf": {
+    "function": "measured",
+    "reference": "NIST AI RMF 1.0"
+  },
+  "iso42001": {
+    "status": "attested",
+    "reference": "ISO/IEC 42001:2023",
+    "certificateId": "example-cert-00042"
+  }
+}
