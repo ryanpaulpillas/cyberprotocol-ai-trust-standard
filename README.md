@@ -9,6 +9,7 @@
 [![Status: Draft v1.0](https://img.shields.io/badge/Status-Draft%20v1.0-00a3d9)](#status)
 [![Steward: OPOEF](https://img.shields.io/badge/Steward-One%20Planet%20One%20Earth%20Foundation-12996b)](https://www.oneplanetoneearthfoundation.org)
 [![Repository](https://img.shields.io/badge/GitHub-cyberprotocol--ai--trust--standard-171515?logo=github)](https://github.com/ryanpaulpillas/cyberprotocol-ai-trust-standard)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21803636.svg)](https://doi.org/10.5281/zenodo.21803636)
 
 [Website](https://cyberprotocol.io) · [Whitepaper](https://cyberprotocol.io/whitepaper.html) · [Repository](https://github.com/ryanpaulpillas/cyberprotocol-ai-trust-standard) · [Governance](#governance) · [Contributing](#contributing)
 
@@ -189,8 +190,27 @@ By contributing you agree that your contributions are licensed under the reposit
 CyberProtocol is designed to be **neutral** and **multi-stakeholder**: no single entity controls the protocol.
 
 - **Official reference:** [cyberprotocol.io](https://cyberprotocol.io)
-- **Permanent archive:** Zenodo (DOI-assigned for an immutable timestamp)
+- **Permanent archive:** [Zenodo, DOI 10.5281/zenodo.21803636](https://doi.org/10.5281/zenodo.21803636) (immutable, timestamped)
 - **Stewardship:** One Planet One Earth Foundation Inc., holder of **UN ECOSOC Consultative Status**
+
+---
+
+## Cite this
+
+If you reference the Standard, please cite the archived record:
+
+> One Planet One Earth Foundation Inc. (2026). *CyberProtocol AI Trust Standard, Version 1.0.* Zenodo. https://doi.org/10.5281/zenodo.21803636
+
+```bibtex
+@techreport{cyberprotocol2026,
+  title       = {CyberProtocol AI Trust Standard, Version 1.0},
+  author      = {{One Planet One Earth Foundation Inc.}},
+  year        = {2026},
+  institution = {One Planet One Earth Foundation Inc.},
+  doi         = {10.5281/zenodo.21803636},
+  url         = {https://doi.org/10.5281/zenodo.21803636}
+}
+```
 
 ---
 
