@@ -191,7 +191,7 @@ CyberProtocol is designed to be **neutral** and **multi-stakeholder**: no single
 
 - **Official reference:** [cyberprotocol.io](https://cyberprotocol.io)
 - **Permanent archive:** [Zenodo, DOI 10.5281/zenodo.21803636](https://doi.org/10.5281/zenodo.21803636) (immutable, timestamped)
-- **Stewardship:** One Planet One Earth Foundation Inc., holder of **UN ECOSOC Consultative Status**
+- **Stewardship:** One Planet One Earth Foundation Inc., holder of **UN ECOSOC Special Consultative Status since 2025**
 
 ---
 
@@ -225,11 +225,11 @@ CyberProtocol uses a dual-license model so the Standard stays a free public good
 
 ## Stewardship & Contact
 
-Published and stewarded by **One Planet One Earth Foundation Inc.**, a non-profit holding **UN ECOSOC Consultative Status** (UNDESA Civil Society Database; SEC Reg. CN202004649; DSWD-FO III-L-00002-2023).
+Published and stewarded by **One Planet One Earth Foundation Inc.**, a non-profit holding **UN ECOSOC Special Consultative Status since 2025** (UNDESA Civil Society Database; SEC Reg. CN202004649; DSWD-FO III-L-00002-2023).
 
 - **Website:** https://www.oneplanetoneearthfoundation.org
 - **Email:** info@oneplanetoneearthfoundation.org
-- **Address:** 16th Floor, SM North EDSA Tower 1, North Avenue cor. EDSA, Quezon City, Philippines
+- **Address:** 066 St. Ignacio St., Poblacion, City of San Jose Del Monte, Bulacan, Philippines
 
 <div align="center">
 
