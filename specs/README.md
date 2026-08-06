@@ -1,4 +1,4 @@
-# CyberProtocol AI Trust Standard — Specification
+# CyberProtocol AI Trust Standard: Specification
 
 **Version 1.0 (Draft, Initial Proposal) · August 2026**
 
@@ -9,6 +9,10 @@ this document records the technical specification.
 > **Status:** Draft. Data formats below are proposed and may change before v1.0 is finalized.
 > Contributions and review are welcome (see [CONTRIBUTING](../CONTRIBUTING.md)).
 
+> 📄 **Full technical specification:** see [SPECIFICATION.md](SPECIFICATION.md) for the complete
+> normative document (DID method, CyberSeal data model, cryptosuites, verification algorithm,
+> security and privacy considerations). This page is a condensed overview.
+
 ---
 
 ## 1. Terminology
@@ -16,10 +20,10 @@ this document records the technical specification.
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as
 described in RFC 2119 and RFC 8174 when, and only when, they appear in all capitals.
 
-- **Agent** — an AI system that produces outputs under an operator's control.
-- **Operator** — the legal entity accountable for an Agent.
-- **Seal** — a cryptographic attestation bound to a specific output.
-- **Verifier** — any party that validates a Seal without proprietary software.
+- **Agent**: an AI system that produces outputs under an operator's control.
+- **Operator**: the legal entity accountable for an Agent.
+- **Seal**: a cryptographic attestation bound to a specific output.
+- **Verifier**: any party that validates a Seal without proprietary software.
 
 ---
 
@@ -28,7 +32,7 @@ described in RFC 2119 and RFC 8174 when, and only when, they appear in all capit
 CyberProtocol defines four verifiable layers. A conforming implementation SHOULD
 support all four; it MUST clearly declare which pillars it implements.
 
-### Pillar 1 — AI & Human Identity
+### Pillar 1: AI & Human Identity
 
 - Human identities are expressed as W3C Verifiable Credentials.
 - AI agents are identified by a Decentralized Identifier using the `cyber` method:
@@ -36,7 +40,7 @@ support all four; it MUST clearly declare which pillars it implements.
 - An agent's DID Document MUST bind a public verification key to the agent's model,
   version, and controlling operator. See [`examples/did-agent.json`](../examples/did-agent.json).
 
-### Pillar 2 — Provenance & Output Certification
+### Pillar 2: Provenance & Output Certification
 
 - An output MAY carry a `CyberSeal` (see Section 3).
 - A Seal MUST reference the digest of the output it certifies.
@@ -44,12 +48,12 @@ support all four; it MUST clearly declare which pillars it implements.
 - Implementations MAY offer a zero-knowledge mode that proves issuance and compliance
   without revealing configuration or other trade secrets.
 
-### Pillar 3 — Safety & Risk Compliance
+### Pillar 3: Safety & Risk Compliance
 
 - A Seal SHOULD include a `compliance` object mapping to recognized frameworks.
 - Defined vocabularies: `euAiAct`, `nistRmf`, `iso42001` (see Section 4).
 
-### Pillar 4 — Cross-Border Verification
+### Pillar 4: Cross-Border Verification
 
 - The Seal format MUST NOT depend on any single nation's signature scheme.
 - Any party MUST be able to verify a Seal using open tools and public key material.
