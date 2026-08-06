@@ -5,11 +5,11 @@ is a public good: it competes with no existing standard, it unifies them.
 
 ## Ways to contribute
 
-- **Specification** — review the text in [`spec/`](spec/), propose clarifications, or raise gaps.
-- **Reference implementation** — build or improve the verifier and issuer in [`reference/`](reference/).
-- **Examples & schemas** — add sample DIDs, seals, and compliance metadata in [`examples/`](examples/).
-- **Policy & compliance** — help map the compliance vocabulary to EU AI Act, NIST AI RMF, and ISO/IEC 42001.
-- **Documentation** — improve guides and integration notes in [`docs/`](docs/).
+- **Specification**: review the text in [`specs/`](specs/), propose clarifications, or raise gaps.
+- **Reference implementation**: build or improve the verifier and issuer in [`reference/`](reference/).
+- **Examples & schemas**: add sample DIDs, seals, and compliance metadata in [`examples/`](examples/).
+- **Policy & compliance**: help map the compliance vocabulary to EU AI Act, NIST AI RMF, and ISO/IEC 42001.
+- **Documentation**: improve guides and integration notes in [`docs/`](docs/).
 
 ## Process
 

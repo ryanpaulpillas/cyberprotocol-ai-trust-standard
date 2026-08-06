@@ -132,7 +132,7 @@ git clone https://github.com/ryanpaulpillas/cyberprotocol-ai-trust-standard.git
 cd cyberprotocol-ai-trust-standard
 
 # Read the specification (the source of truth)
-$EDITOR spec/README.md
+$EDITOR specs/README.md
 
 # Explore the proposed data formats
 cat examples/cyber-seal.json
@@ -149,7 +149,7 @@ cat examples/did-agent.json
 
 ```
 cyberprotocol-ai-trust-standard/
-├── spec/           # The written specification (source of truth)
+├── specs/           # The written specification (source of truth)
 ├── contexts/       # JSON-LD contexts and schemas (ns/v1)
 ├── reference/      # Reference implementation (verifier + issuer)
 ├── examples/       # Sample DIDs, seals, and compliance metadata
