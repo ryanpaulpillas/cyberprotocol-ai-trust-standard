@@ -12,7 +12,7 @@ name: Deploy website
 on:
   push:
     branches: [main]
-    paths: ["website/**"]
+    paths: ["website/**", ".github/workflows/deploy-website.yml"]
   workflow_dispatch:
 
 concurrency:
