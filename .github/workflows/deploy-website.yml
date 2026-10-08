@@ -46,19 +46,19 @@ jobs:
 
           # Describe ACCESS_DETAILS without printing any values: line count and each line's label
           if [ -z "$ACCESS" ]; then
-            echo "ACCESS_DETAILS: not set or empty (check it is a Repository secret on the Secrets tab)"
+            shape="ACCESS_DETAILS is not set or empty (it must be a Repository secret on the Secrets tab)"
           else
-            echo "ACCESS_DETAILS: $(printf '%s\n' "$ACCESS" | tr -d '\r' | grep -c .) non-empty line(s)"
-            printf '%s\n' "$ACCESS" | tr -d '\r' | grep . | while IFS= read -r line; do
+            shape="ACCESS_DETAILS has $(printf '%s\n' "$ACCESS" | tr -d '\r' | grep -c .) line(s):"
+            while IFS= read -r line; do
               label="${line%%[:=]*}"
               if [ "$label" != "$line" ] && printf '%s' "$label" | grep -qE '^[A-Za-z &_./()-]{1,40}$'; then
-                echo "  label: '$label'"
+                shape="$shape '$label'"
               else
-                echo "  (line without a 'Label:' prefix)"
+                shape="$shape (unlabelled)"
               fi
-            done
+            done < <(printf '%s\n' "$ACCESS" | tr -d '\r' | grep .)
           fi
-          server="${server#ftp://}"; server="${server#ftps://}"; server="${server%/}"
+          echo "::notice::$shape"
 
           [ -n "$pass" ] && echo "::add-mask::$pass"
           missing=""
