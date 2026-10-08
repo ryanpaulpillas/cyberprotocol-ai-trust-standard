@@ -1,0 +1,39 @@
+# Uploads website/ to the GoDaddy host serving https://cyberprotocol.io
+# whenever it changes on main (or when run by hand from the Actions tab).
+#
+# Required repository secrets (Settings -> Secrets and variables -> Actions):
+#   FTP_SERVER      e.g. ftp.cyberprotocol.io  (cPanel -> FTP Accounts -> Configure FTP Client)
+#   FTP_USERNAME    the cPanel FTP account username
+#   FTP_PASSWORD    that account's password
+#   FTP_SERVER_DIR  folder that serves cyberprotocol.io, with a trailing slash, e.g. public_html/
+
+name: Deploy website
+
+on:
+  push:
+    branches: [main]
+    paths: ["website/**"]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-website
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload to GoDaddy over FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          local-dir: ./website/
+          protocol: ftps
+          # GoDaddy's shared-host certificate usually doesn't match the FTP hostname;
+          # the connection is still encrypted.
+          security: loose
