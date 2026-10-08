@@ -15,7 +15,8 @@ name: Deploy website
 on:
   push:
     branches: [main]
-    paths: ["website/**", ".github/workflows/deploy-website.yml"]
+    # .github/redeploy is touched by `./publish --redeploy` to re-run without site changes
+    paths: ["website/**", ".github/workflows/deploy-website.yml", ".github/redeploy"]
   workflow_dispatch:
 
 concurrency:
