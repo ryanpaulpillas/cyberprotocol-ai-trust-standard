@@ -54,12 +54,18 @@ jobs:
             exit 1
           fi
 
-          ls_ftp() { curl -s -k --ssl-reqd --max-time 30 --list-only --user "$user:$pass" "ftp://$server/$1"; }
+          # GoDaddy hosts often have no ftp.<domain> record; the bare domain serves FTP
+          if ! getent hosts "$server" >/dev/null && [ "${server#ftp.}" != "$server" ] && getent hosts "${server#ftp.}" >/dev/null; then
+            echo "::notice::$server does not resolve; using ${server#ftp.}"
+            server="${server#ftp.}"
+          fi
+
+          ls_ftp() { curl -sS -k --ssl-reqd --max-time 30 --list-only --user "$user:$pass" "ftp://$server/$1"; }
 
           if [ -n "$S_DIR" ]; then
             dir="$S_DIR"
           else
-            root=$(ls_ftp "") || { echo "::error::FTP login to $server failed. Check the server, username and password."; exit 1; }
+            root=$(ls_ftp "" 2>/tmp/ftp-err) || { echo "::error::FTP login to $server failed: $(cat /tmp/ftp-err)"; exit 1; }
             if printf '%s\n' "$root" | grep -qx 'index.html'; then
               dir="./"
             elif printf '%s\n' "$root" | grep -qx 'public_html' && ls_ftp "public_html/" | grep -qx 'index.html'; then
