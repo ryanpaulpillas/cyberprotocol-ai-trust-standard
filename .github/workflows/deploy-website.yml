@@ -37,28 +37,48 @@ jobs:
           S_PASS: ${{ secrets.FTP_PASSWORD }}
           S_DIR: ${{ secrets.FTP_SERVER_DIR }}
         run: |
-          # value of the first ACCESS_DETAILS line whose label matches $1
-          field() { printf '%s\n' "$ACCESS" | tr -d '\r' | grep -i -m1 -E "^[^:=]*($1)[^:=]*[:=]" | sed -E 's/^[^:=]*[:=][[:space:]]*//; s/[[:space:]]+$//'; }
+          T=$'\t'
+          lines=$(printf '%s\n' "$ACCESS" | tr -d '\r' | grep . || true)
 
+          # 1) "Label: value" / "Label = value" / "Label<TAB>value" lines
+          field() { printf '%s\n' "$lines" | grep -i -m1 -E "^[^:=$T]*($1)[^:=$T]*[:=$T]" | sed -E "s/^[^:=$T]*[:=$T][[:space:]]*//; s/[[:space:]]+\$//"; }
           server="${S_SERVER:-$(field 'server|host')}"
           user="${S_USER:-$(field 'user|login')}"
           pass="${S_PASS:-$(field 'pass|pwd')}"
 
-          # Describe ACCESS_DETAILS without printing any values: line count and each line's label
-          if [ -z "$ACCESS" ]; then
-            shape="ACCESS_DETAILS is not set or empty (it must be a Repository secret on the Secrets tab)"
+          # 2) Unlabelled values: tell them apart by shape (user has @, port is a number,
+          #    server looks like a domain, the one left over is the password)
+          shape=""
+          others=()
+          while IFS= read -r line; do
+            [ -z "$line" ] && continue
+            v="$line"
+            case "$line" in *[:=$T]*) v="${line#*[:=$T]}";; esac
+            v="$(printf '%s' "$v" | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')"
+            if printf '%s' "$v" | grep -qE '^[^[:space:]@]+@[^[:space:]@]+$'; then
+              kind="username-like"; [ -z "$user" ] && user="$v"
+            elif printf '%s' "$v" | grep -qE '^[0-9]+$'; then
+              kind="number"
+            elif printf '%s' "$v" | grep -qiE '^(ftps?://)?([a-z0-9-]+\.)+[a-z]{2,}/?$'; then
+              kind="domain-like"; [ -z "$server" ] && server="$v"
+            else
+              kind="other"; others+=("$v")
+            fi
+            label="${line%%[:=$T]*}"
+            if [ "$label" != "$line" ] && printf '%s' "$label" | grep -qE '^[A-Za-z &_./()-]{1,40}$'; then
+              shape="$shape [$label -> $kind]"
+            else
+              shape="$shape [unlabelled $kind]"
+            fi
+          done <<< "$lines"
+          if [ -z "$pass" ] && [ "${#others[@]}" -eq 1 ]; then pass="${others[0]}"; fi
+
+          # Describe ACCESS_DETAILS in the run summary without printing any values
+          if [ -z "$lines" ]; then
+            echo "::notice::ACCESS_DETAILS is not set or empty (it must be a Repository secret on the Secrets tab)"
           else
-            shape="ACCESS_DETAILS has $(printf '%s\n' "$ACCESS" | tr -d '\r' | grep -c .) line(s):"
-            while IFS= read -r line; do
-              label="${line%%[:=]*}"
-              if [ "$label" != "$line" ] && printf '%s' "$label" | grep -qE '^[A-Za-z &_./()-]{1,40}$'; then
-                shape="$shape '$label'"
-              else
-                shape="$shape (unlabelled)"
-              fi
-            done < <(printf '%s\n' "$ACCESS" | tr -d '\r' | grep .)
+            echo "::notice::ACCESS_DETAILS lines:$shape"
           fi
-          echo "::notice::$shape"
 
           [ -n "$pass" ] && echo "::add-mask::$pass"
           missing=""
