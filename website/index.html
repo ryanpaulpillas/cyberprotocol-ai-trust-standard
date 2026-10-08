@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CyberProtocol: AI Trust Standard</title>
+<meta name="description" content="CyberProtocol AI Trust Standard: a neutral, open, cryptographic framework for AI identity, provenance, and compliance verification. An initiative of ONE PLANET ONE EARTH FOUNDATION INC., holder of UN ECOSOC Special Consultative Status since 2025." />
+<meta name="theme-color" content="#ffffff" />
+<link rel="canonical" href="https://cyberprotocol.io/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="author" content="One Planet One Earth Foundation Inc." />
+<meta name="keywords" content="AI trust standard, verifiable AI, AI provenance, AI identity verification, AI compliance, EU AI Act, NIST AI RMF, ISO/IEC 42001, decentralized identifiers, cross-border AI verification, CyberProtocol" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CyberProtocol: AI Trust Standard" />
+<meta property="og:description" content="A neutral global framework for AI identity, provenance, and compliance verification. Published as a global public good." />
+<meta property="og:url" content="https://cyberprotocol.io/" />
+<meta property="og:site_name" content="CyberProtocol" />
+<meta property="og:image" content="https://cyberprotocol.io/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CyberProtocol: AI Trust Standard" />
+<meta name="twitter:description" content="A neutral global framework for AI identity, provenance, and compliance verification." />
+<meta name="twitter:image" content="https://cyberprotocol.io/assets/og-image.png" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+
+<!-- Structured data (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cyberprotocol.io/#foundation",
+      "name": "One Planet One Earth Foundation Inc.",
+      "url": "https://www.oneplanetoneearthfoundation.org",
+      "email": "info@oneplanetoneearthfoundation.org",
+      "logo": "https://cyberprotocol.io/assets/opoe-logo.png",
+      "description": "Non-profit holding United Nations ECOSOC Special Consultative Status since 2025; steward of the CyberProtocol AI Trust Standard.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "066 St. Ignacio St., Poblacion",
+        "addressLocality": "City of San Jose Del Monte",
+        "addressRegion": "Bulacan",
+        "addressCountry": "PH"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cyberprotocol.io/#website",
+      "url": "https://cyberprotocol.io/",
+      "name": "CyberProtocol AI Trust Standard",
+      "description": "A neutral, open cryptographic framework for verifying AI Identity, Provenance, Safety, and Compliance across all jurisdictions.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://cyberprotocol.io/#foundation" }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://cyberprotocol.io/#standard",
+      "name": "CyberProtocol AI Trust Standard",
+      "headline": "CyberProtocol AI Trust Standard, Version 1.0",
+      "url": "https://cyberprotocol.io/",
+      "inLanguage": "en",
+      "version": "1.0",
+      "datePublished": "2026-08-05",
+      "author": { "@id": "https://cyberprotocol.io/#foundation" },
+      "publisher": { "@id": "https://cyberprotocol.io/#foundation" },
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.21803636"
+      },
+      "sameAs": [
+        "https://doi.org/10.5281/zenodo.21803636",
+        "https://github.com/ryanpaulpillas/cyberprotocol-ai-trust-standard"
+      ],
+      "keywords": "AI governance, verifiable AI, provenance, EU AI Act, NIST AI RMF, ISO/IEC 42001, decentralized identifiers, cross-border verification"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- Skip link -->
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ===== Header / Nav ===== -->
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="CyberProtocol home">
+      <img class="brand-mark" src="assets/cp-mark-72.png" width="34" height="34" alt="" />
+      <span class="brand-name">Cyber<strong>Protocol</strong></span>
+    </a>
+
+    <nav class="nav-links" id="primary-nav" aria-label="Primary">
+      <a href="#problem">The Gap</a>
+      <a href="#pillars">Four Pillars</a>
+      <a href="#governance">Governance</a>
+      <a href="whitepaper.html">Whitepaper</a>
+      <a href="#support">Support</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="btn btn-sm" href="#action">Adopt the Standard</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <h1>The CyberProtocol<br/><span class="grad">AI Trust Standard</span></h1>
+    <p class="lede">A neutral, open cryptographic framework for verifying AI <em>Identity</em>, <em>Provenance</em>, <em>Safety</em>, and <em>Compliance</em> across all jurisdictions.</p>
+
+    <div class="hero-cta">
+      <a class="btn" href="#pillars">Explore the Four Pillars</a>
+      <a class="btn btn-ghost" href="#action">Read the Call to Action</a>
+    </div>
+
+    <ul class="hero-badges" aria-label="Alignment">
+      <li><span class="dot"></span> EU AI Act</li>
+      <li><span class="dot"></span> WAICO</li>
+      <li><span class="dot"></span> Rome Declaration</li>
+      <li><span class="dot"></span> NIST AI RMF</li>
+      <li><span class="dot"></span> ISO/IEC 42001</li>
+    </ul>
+  </div>
+
+  <div class="hero-steward wrap">
+    <div class="steward-card">
+      <div class="steward-emblem">
+        <img src="assets/opoe-logo-128.png" width="73" height="64" alt="One Planet One Earth Foundation logo" />
+      </div>
+      <div>
+        <p class="steward-kicker">An initiative of</p>
+        <p class="steward-name">One Planet One Earth Foundation Inc.</p>
+        <p class="steward-sub">Holder of United Nations ECOSOC Special Consultative Status since 2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Executive Summary strip ===== -->
+<section class="summary">
+  <div class="wrap">
+    <p class="summary-text">The world faces a historic moment. EU AI Act enforcement, the founding of WAICO, and the Rome Declaration by Nobel Laureates all demand verifiable AI, yet no harmonized, cross-border verification system exists. <strong>CyberProtocol fills this gap</strong> as a global public good, not controlled by any nation, corporation, or bloc.</p>
+  </div>
+</section>
+
+<!-- ===== Problem ===== -->
+<section class="section" id="problem">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Three mandates. No solution.</h2>
+      <p class="section-sub">Governments require it. Businesses cannot comply. Users cannot trust. The laws already exist, but the instrument to verify them does not, and <span class="urgent">the gap widens by the day</span>.</p>
+    </div>
+
+    <div class="cards-3">
+      <article class="card">
+        <p class="card-tag">Transparency duties since Aug 2, 2026</p>
+        <h3>EU AI Act</h3>
+        <p>AI-generated content must be disclosed and machine-detectable, with high-risk obligations following from December 2027.</p>
+        <p class="card-gap"><span class="miss">Still missing</span> No harmonized technical standard adopted.</p>
+      </article>
+      <article class="card">
+        <p class="card-tag">Founded July 16, 2026</p>
+        <h3>WAICO</h3>
+        <p>29 nations agree AI governance must be open, inclusive, and verifiable.</p>
+        <p class="card-gap"><span class="miss">Still missing</span> No verification protocol proposed.</p>
+      </article>
+      <article class="card">
+        <p class="card-tag">July 16, 2026</p>
+        <h3>Rome Declaration</h3>
+        <p>Nobel Laureates demand meaningful human control over AI, and the means to monitor and halt it.</p>
+        <p class="card-gap"><span class="miss">Still missing</span> No working system available to the public.</p>
+      </article>
+    </div>
+
+    <div class="split">
+      <div>
+        <h3 class="split-title">Why existing solutions fail</h3>
+        <ul class="fail-list">
+          <li><strong>Big Tech proprietary systems</strong>: controlled by US corporations; antitrust exposure, rejected by other blocs.</li>
+          <li><strong>Nation-state standards</strong>: seen as geopolitical tools, rejected abroad.</li>
+          <li><strong>Paper-only guidelines</strong>: no code, no cryptography, no way to actually verify.</li>
+          <li><strong>Human-only identity protocols</strong>: do not verify AI agents or AI-generated content.</li>
+        </ul>
+      </div>
+      <div class="conseq-panel">
+        <h3 class="split-title">The consequence of inaction</h3>
+        <ul class="conseq-list">
+          <li><strong>Fragmentation.</strong> Every nation builds its own → 10+ incompatible systems → global trade friction.</li>
+          <li><strong>Geopolitical capture.</strong> One bloc's standard dominates → a digital Iron Curtain.</li>
+          <li><strong>Unverifiable AI.</strong> Regulations exist but cannot be enforced → public trust erodes.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Pillars ===== -->
+<section class="section section-alt" id="pillars">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The proposal: four pillars</h2>
+      <p class="section-sub">Four verifiable layers working together as one system. No existing framework covers all four.</p>
+    </div>
+
+    <div class="pillars">
+      <article class="pillar">
+        <div class="pillar-num">1</div>
+        <div class="pillar-body">
+          <h3>AI &amp; Human Identity</h3>
+          <p class="pillar-q">Who or what is acting?</p>
+          <ul>
+            <li>Decentralized Identifiers (DID) extended for AI agents: <code>did:cyber:agent</code></li>
+            <li><strong>Human identity</strong> via W3C Verifiable Credentials</li>
+            <li><strong>AI identity</strong>: cryptographic key bound to model, version, and operator</li>
+          </ul>
+          <p class="pillar-result">You can distinguish a human from an AI, and know <em>which</em> AI, instantly.</p>
+        </div>
+      </article>
+
+      <article class="pillar">
+        <div class="pillar-num">2</div>
+        <div class="pillar-body">
+          <h3>Provenance &amp; Output Certification</h3>
+          <p class="pillar-q">Where did this come from?</p>
+          <ul>
+            <li>Every AI response, file, or transaction carries an immutable cryptographic seal</li>
+            <li>Seal includes model ID, timestamp, configuration hash, and operator signature</li>
+            <li><strong>Zero-knowledge option</strong>: prove origin without revealing trade secrets</li>
+          </ul>
+          <p class="pillar-result">You can trust what you see, and trace it to its source, permanently.</p>
+        </div>
+      </article>
+
+      <article class="pillar">
+        <div class="pillar-num">3</div>
+        <div class="pillar-body">
+          <h3>Safety &amp; Risk Compliance</h3>
+          <p class="pillar-q">Does this meet legal requirements?</p>
+          <ul>
+            <li>Compliance metadata maps directly to EU AI Act risk categories</li>
+            <li>NIST AI RMF alignment fields included</li>
+            <li>ISO/IEC 42001 audit-ready attestation</li>
+          </ul>
+          <p class="pillar-result">One proof, recognized by multiple regulatory frameworks simultaneously.</p>
+        </div>
+      </article>
+
+      <article class="pillar">
+        <div class="pillar-num">4</div>
+        <div class="pillar-body">
+          <h3>Cross-Border Verification</h3>
+          <p class="pillar-q">Is this proof valid everywhere?</p>
+          <ul>
+            <li><strong>Neutral format</strong>: not tied to any nation's signature scheme</li>
+            <li>Built for UN ECOSOC, EU, WAICO, and Global South adoption</li>
+            <li><strong>Open validation</strong>: anyone can verify the seal, no proprietary software</li>
+          </ul>
+          <p class="pillar-result">One standard, recognized in every jurisdiction, without geopolitical restriction.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Principles ===== -->
+<section class="section" id="principles">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Design principles</h2>
+      <p class="section-sub">Five commitments that make the Standard trustworthy by construction.</p>
+    </div>
+    <div class="principles">
+      <div class="principle"><h4>Neutral</h4><p>No single entity controls the protocol. Governance is multi-stakeholder.</p></div>
+      <div class="principle"><h4>Open</h4><p>Specification under CC BY 4.0; reference code under Apache 2.0. Free to read, use, and implement.</p></div>
+      <div class="principle"><h4>Interoperable</h4><p>Built on existing standards (W3C, ISO, NIST), not competing with them.</p></div>
+      <div class="principle"><h4>Privacy-first</h4><p>Zero-knowledge proofs enable compliance without exposing confidential data.</p></div>
+      <div class="principle"><h4>Permissionless</h4><p>No gatekeepers. Any developer can implement it; any verifier can validate it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Technical Foundation ===== -->
+<section class="section section-alt" id="foundation">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Technical foundation</h2>
+      <p class="section-sub">We are not inventing new cryptography. We are unifying proven standards into one coherent framework. The building blocks are ready. Only coordination is needed, which we provide.</p>
+    </div>
+    <div class="table-scroll">
+      <table class="std-table">
+        <thead><tr><th>Layer</th><th>Existing Standard</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Identity</td><td>W3C Decentralized Identifiers (DID)</td><td><span class="pill pill-ok">Mature</span></td></tr>
+          <tr><td>Credentials</td><td>W3C Verifiable Credentials (VC)</td><td><span class="pill pill-ok">Mature</span></td></tr>
+          <tr><td>Privacy</td><td>Zero-Knowledge Proofs (ZK-SNARKs)</td><td><span class="pill pill-ok">Production-ready</span></td></tr>
+          <tr><td>Compliance metadata</td><td>EU AI Act / NIST AI RMF / ISO 42001</td><td><span class="pill">Reference docs exist</span></td></tr>
+          <tr><td>Signature</td><td>W3C Data Integrity / CBOR signatures</td><td><span class="pill pill-ok">Standardized</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Competitive Landscape ===== -->
+<section class="section" id="landscape">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Competitive landscape</h2>
+      <p class="section-sub">Every competitor builds <em>pieces</em>. CyberProtocol is the only framework that connects all four layers into a working system.</p>
+    </div>
+    <div class="table-scroll">
+      <table class="std-table compare">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="hl">CyberProtocol</th>
+            <th>Big Tech</th>
+            <th>National</th>
+            <th>Academic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Human identity</td><td class="hl"><span class="mk ok">✓</span></td><td><span class="mk part">◐</span></td><td><span class="mk part">◐</span></td><td><span class="mk no">✕</span></td></tr>
+          <tr><td>AI agent identity <em class="first">first proposed</em></td><td class="hl"><span class="mk ok">✓</span></td><td><span class="mk no">✕</span></td><td><span class="mk no">✕</span></td><td><span class="mk no">✕</span></td></tr>
+          <tr><td>AI output provenance</td><td class="hl"><span class="mk ok">✓</span></td><td><span class="mk part">◐</span></td><td><span class="mk no">✕</span></td><td><span class="mk no">✕</span></td></tr>
+          <tr><td>Cross-border neutrality</td><td class="hl"><span class="mk ok">✓</span></td><td><span class="mk no">✕</span></td><td><span class="mk no">✕</span></td><td><span class="mk part">◐</span></td></tr>
+          <tr><td>Open &amp; free</td><td class="hl"><span class="mk ok">✓</span></td><td><span class="mk no">✕</span></td><td><span class="mk part">◐</span></td><td><span class="mk part">◐</span></td></tr>
+          <tr><td>UN-aligned governance</td><td class="hl"><span class="mk ok">✓</span></td><td><span class="mk no">✕</span></td><td><span class="mk no">✕</span></td><td><span class="mk no">✕</span></td></tr>
+          <tr><td>Ready for immediate use</td><td class="hl"><span class="mk ok">✓</span></td><td><span class="mk part">◐</span></td><td><span class="mk no">✕</span></td><td><span class="mk no">✕</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="legend"><span class="mk ok">✓</span> Full &nbsp; <span class="mk part">◐</span> Partial / conditional &nbsp; <span class="mk no">✕</span> Absent</p>
+  </div>
+</section>
+
+<!-- ===== Governance ===== -->
+<section class="section section-alt" id="governance">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Publication &amp; governance</h2>
+      <p class="section-sub">Stewarded as a global public good: free in perpetuity, open to all.</p>
+    </div>
+    <div class="gov-grid">
+      <div class="gov-item"><h4>Official reference</h4><p>cyberprotocol.io</p></div>
+      <div class="gov-item"><h4>Permanent archive</h4><p><a href="https://doi.org/10.5281/zenodo.21803636" target="_blank" rel="noopener">doi.org/10.5281/zenodo.21803636</a>, permanent DOI record</p></div>
+      <div class="gov-item"><h4>Technical repository</h4><p><a href="https://github.com/ryanpaulpillas/cyberprotocol-ai-trust-standard" target="_blank" rel="noopener">github.com/ryanpaulpillas/cyberprotocol-ai-trust-standard</a>, open-source reference implementation</p></div>
+      <div class="gov-item"><h4>Stewardship</h4><p>One Planet One Earth Foundation Inc., holder of UN ECOSOC Special Consultative Status since 2025</p></div>
+      <div class="gov-item"><h4>Standard license</h4><p>Creative Commons Attribution 4.0 International, free in perpetuity</p></div>
+      <div class="gov-item"><h4>Code license</h4><p>Apache 2.0, permissive, commercial use allowed</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Timeline ===== -->
+<section class="section" id="timeline">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Timeline &amp; next steps</h2>
+      <p class="section-sub">From proposal to global default: a phased path to verifiable AI, moving in step with the regulations already entering force.</p>
+    </div>
+    <ol class="roadmap">
+      <li class="rm-step is-done">
+        <span class="rm-dot"></span>
+        <p class="rm-year">August 2026</p>
+        <span class="rm-tag">Completed</span>
+        <ul class="rm-items">
+          <li>Standard proposed to UN ECOSOC</li>
+          <li>Published to Zenodo and GitHub</li>
+        </ul>
+      </li>
+      <li class="rm-step is-current">
+        <span class="rm-dot"></span>
+        <p class="rm-year">Q4 2026</p>
+        <span class="rm-tag">In progress</span>
+        <ul class="rm-items">
+          <li>First reference implementation</li>
+          <li>Pilot integrations with AI labs</li>
+        </ul>
+      </li>
+      <li class="rm-step">
+        <span class="rm-dot"></span>
+        <p class="rm-year">2027</p>
+        <ul class="rm-items">
+          <li>Formal adoption by nations</li>
+          <li>Integration into regulatory enforcement</li>
+        </ul>
+      </li>
+      <li class="rm-step">
+        <span class="rm-dot"></span>
+        <p class="rm-year">2028+</p>
+        <ul class="rm-items">
+          <li>Global default: every AI output carries a CyberProtocol seal</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== Call to Action ===== -->
+<section class="section cta" id="action">
+  <div class="wrap">
+    <div class="section-head center">
+      <h2>A call to action</h2>
+      <p class="section-sub">The world's laws already demand verifiable AI. Here is what each of us can do, starting today.</p>
+    </div>
+    <div class="cta-grid">
+      <div class="cta-card">
+        <span class="cta-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10M19 21V10M4 10l8-5 8 5M9 21v-6h6v6"/></svg>
+        </span>
+        <span class="cta-tag">Governments &amp; the UN</span>
+        <h3>To the United Nations &amp; Member States</h3>
+        <p>Recognize cyberprotocol.io as a reference framework for AI verification. It is open, neutral, and ready today. Adopt one standard and make it available to all nations equally.</p>
+        <a class="cta-link" href="#contact">Recognize the Standard <span>&rarr;</span></a>
+      </div>
+      <div class="cta-card">
+        <span class="cta-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg>
+        </span>
+        <span class="cta-tag">Builders &amp; AI labs</span>
+        <h3>To AI developers</h3>
+        <p>Implement the Standard. It is free and open, and verification obligations are already entering law. Seal your outputs now and save the rework later.</p>
+        <a class="cta-link" href="https://github.com/ryanpaulpillas/cyberprotocol-ai-trust-standard" target="_blank" rel="noopener">Get the reference code <span>&rarr;</span></a>
+      </div>
+      <div class="cta-card">
+        <span class="cta-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0M17 6a3 3 0 0 1 0 6M20.5 20a5.5 5.5 0 0 0-3.6-5.2"/></svg>
+        </span>
+        <span class="cta-tag">Citizens everywhere</span>
+        <h3>To the global public</h3>
+        <p>Demand verifiable AI. When you cannot tell whether content is human or machine-made, democratic discourse is at risk. CyberProtocol restores transparency.</p>
+        <a class="cta-link" href="whitepaper.html">See how it works <span>&rarr;</span></a>
+      </div>
+    </div>
+
+    <blockquote class="closing">
+      The laws of the world have already spoken. They demand AI that is verifiable, safe, and accountable. What remains is the technical instrument to make those laws work, proposed now, not as a commercial product, but as a <strong>global public good</strong>.
+    </blockquote>
+  </div>
+</section>
+
+<!-- ===== Support / Funding ===== -->
+<section class="section" id="support">
+  <div class="wrap">
+    <div class="support-card">
+      <div class="support-lead">
+        <p class="support-kicker">Support a global public good</p>
+        <h2>Help make verifiable AI the global default</h2>
+        <p>The CyberProtocol Standard is free to all, in perpetuity. Advancing it to a working reference implementation, pilot integrations with AI laboratories, and neutral multi-stakeholder governance requires support. We invite funders, philanthropies, standards bodies, and industry partners to help build the trust layer of the AI era.</p>
+        <div class="support-cta">
+          <a class="btn" href="#contact">Partner with us</a>
+          <a class="btn btn-ghost" href="whitepaper.html">Read the whitepaper</a>
+        </div>
+        <p class="support-note">Contributions are stewarded by One Planet One Earth Foundation Inc., a non-profit holding UN ECOSOC Special Consultative Status since 2025.</p>
+      </div>
+      <ul class="support-enables" aria-label="What your support enables">
+        <li><span class="se-ic">✓</span><div><strong>Reference implementation</strong><span>Open-source issuer and verifier that any developer can adopt.</span></div></li>
+        <li><span class="se-ic">✓</span><div><strong>Pilot integrations</strong><span>Real deployments with AI labs and regulators to prove the model.</span></div></li>
+        <li><span class="se-ic">✓</span><div><strong>Neutral governance</strong><span>Multi-stakeholder stewardship that keeps the standard independent.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="section section-alt" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-intro">
+        <h2>Contact the steward</h2>
+        <p class="section-sub">The CyberProtocol AI Trust Standard is published and stewarded by One Planet One Earth Foundation Inc. For adoption inquiries, partnerships, or media, reach the Foundation directly.</p>
+        <div class="cred-badges" aria-label="Credentials">
+          <span class="cred">UN ECOSOC Special Consultative Status since 2025</span>
+          <span class="cred">UNDESA Civil Society Database</span>
+          <span class="cred">SEC Reg. CN202004649</span>
+          <span class="cred">DSWD-FO III-L-00002-2023</span>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-head">
+          <img src="assets/opoe-logo-128.png" width="54" height="48" alt="One Planet One Earth Foundation logo" />
+          <div>
+            <p class="contact-org">One Planet One Earth Foundation Inc.</p>
+            <p class="contact-org-sub">Steward of the CyberProtocol Standard</p>
+          </div>
+        </div>
+        <ul class="contact-list">
+          <li><span class="ci">Address</span><span>066 St. Ignacio St., Poblacion, City of San Jose Del Monte, Bulacan, Philippines</span></li>
+          <li><span class="ci">Email</span><span><a href="mailto:info@oneplanetoneearthfoundation.org">info@oneplanetoneearthfoundation.org</a><br/><a href="mailto:ryan@oneplanetoneearthfoundation.org">ryan@oneplanetoneearthfoundation.org</a></span></li>
+          <li><span class="ci">Phone</span><span><a href="tel:+639658053173">+63 965 805 3173</a> · <a href="tel:+639985819005">+63 998 581 9005</a></span></li>
+          <li><span class="ci">Website</span><span><a href="https://www.oneplanetoneearthfoundation.org" target="_blank" rel="noopener">oneplanetoneearthfoundation.org ↗</a></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="#top" aria-label="CyberProtocol home">
+        <img class="brand-mark" src="assets/cp-mark-dark-72.png" width="32" height="32" alt="" />
+        <span class="brand-name">Cyber<strong>Protocol</strong></span>
+      </a>
+      <p class="footer-tag">A neutral global framework for AI identity, provenance, and compliance verification.</p>
+    </div>
+
+    <div class="footer-cols">
+      <div>
+        <h5>Standard</h5>
+        <a href="#pillars">Four Pillars</a>
+        <a href="#principles">Design Principles</a>
+        <a href="#foundation">Technical Foundation</a>
+        <a href="#governance">Governance</a>
+        <a href="#support">Support / Partner</a>
+      </div>
+      <div>
+        <h5>Resources</h5>
+        <a href="whitepaper.html">Whitepaper (v1.0)</a>
+        <a href="CyberProtocol-AI-Trust-Standard-v1.0.pdf" download>Download PDF ↓</a>
+        <a href="https://doi.org/10.5281/zenodo.21803636" target="_blank" rel="noopener">Zenodo Archive (DOI) ↗</a>
+        <a href="https://github.com/ryanpaulpillas/cyberprotocol-ai-trust-standard" target="_blank" rel="noopener">GitHub Repository ↗</a>
+      </div>
+      <div class="footer-steward">
+        <h5>Steward</h5>
+        <div class="footer-steward-row">
+          <span class="footer-logo-chip"><img src="assets/opoe-logo-128.png" width="45" height="40" alt="One Planet One Earth Foundation logo" /></span>
+          <div>
+            <a href="https://www.oneplanetoneearthfoundation.org" target="_blank" rel="noopener">One Planet One Earth Foundation Inc. ↗</a>
+            <a href="mailto:info@oneplanetoneearthfoundation.org">info@oneplanetoneearthfoundation.org</a>
+            <a href="#contact">UN ECOSOC Special Consultative Status since 2025</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <p>© 2026 One Planet One Earth Foundation Inc. · Standard under CC BY 4.0 · Reference code under Apache 2.0.</p>
+    <p>cyberprotocol.io, published as a global public good.</p>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
