@@ -41,7 +41,9 @@ jobs:
           lines=$(printf '%s\n' "$ACCESS" | tr -d '\r' | grep . || true)
 
           # 1) "Label: value" / "Label = value" / "Label<TAB>value" lines
-          field() { printf '%s\n' "$lines" | grep -i -m1 -E "^[^:=$T]*($1)[^:=$T]*[:=$T]" | sed -E "s/^[^:=$T]*[:=$T][[:space:]]*//; s/[[:space:]]+\$//"; }
+          dirlabel="^[^:=$T]*(dir|path|folder|root)[^:=$T]*[:=$T]"
+          field() { printf '%s\n' "$lines" | grep -i -v -E "$dirlabel" | grep -i -m1 -E "^[^:=$T]*($1)[^:=$T]*[:=$T]" | sed -E "s/^[^:=$T]*[:=$T][[:space:]]*//; s/[[:space:]]+\$//"; }
+          dir_given="${S_DIR:-$(printf '%s\n' "$lines" | grep -i -m1 -E "$dirlabel" | sed -E "s/^[^:=$T]*[:=$T][[:space:]]*//; s/[[:space:]]+\$//")}"
           server="${S_SERVER:-$(field 'server|host')}"
           user="${S_USER:-$(field 'user|login')}"
           pass="${S_PASS:-$(field 'pass|pwd')}"
@@ -52,6 +54,7 @@ jobs:
           others=()
           while IFS= read -r line; do
             [ -z "$line" ] && continue
+            printf '%s\n' "$line" | grep -qiE "$dirlabel" && { shape="$shape [folder setting]"; continue; }
             v="$line"
             case "$line" in *[:=$T]*) v="${line#*[:=$T]}";; esac
             v="$(printf '%s' "$v" | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')"
@@ -98,10 +101,15 @@ jobs:
 
           ls_ftp() { curl -sS -k --ssl-reqd --max-time 30 --list-only --user "$user:$pass" "ftp://$server/$1"; }
 
-          if [ -n "$S_DIR" ]; then
-            dir="$S_DIR"
+          root=$(ls_ftp "" 2>/tmp/ftp-err) || { echo "::error::FTP login to $server failed: $(cat /tmp/ftp-err)"; exit 1; }
+          if [ -n "$dir_given" ]; then
+            dir="${dir_given#/}"; dir="${dir%/}/"; [ "$dir" = "/" ] && dir="./"
+            # only deploy into a folder that already holds the live site
+            if ! ls_ftp "${dir#./}" 2>/dev/null | grep -qx 'index.html'; then
+              echo "::error::Folder setting '$dir_given' has no index.html for this FTP account, so it is not the live site folder. This account's root contains: $(printf '%s ' $root)"
+              exit 1
+            fi
           else
-            root=$(ls_ftp "" 2>/tmp/ftp-err) || { echo "::error::FTP login to $server failed: $(cat /tmp/ftp-err)"; exit 1; }
             if printf '%s\n' "$root" | grep -qx 'index.html'; then
               dir="./"
             elif printf '%s\n' "$root" | grep -qx 'public_html' && ls_ftp "public_html/" | grep -qx 'index.html'; then
